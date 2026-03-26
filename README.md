@@ -1,4 +1,4 @@
-<h1 align="center">📱 Ibsar - Lens Management ERP</h1>
+<h1 align="center">📱 Ain Mobsrah - Lens Management ERP</h1>
 
 <p align="center">
   <strong>A robust, enterprise-grade Android application tailored for optical centers to manage inventory, host product galleries, and generate dynamic PDF catalogs.</strong>
