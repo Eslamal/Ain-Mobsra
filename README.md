@@ -4,28 +4,6 @@
   <strong>A robust, enterprise-grade Android application tailored for optical centers to manage inventory, host product galleries, and generate dynamic PDF catalogs.</strong>
 </p>
 
-<table style="width:100%">
-  <tr>
-    <td><img src="photos/photo_2026-03-26_01-57-22.jpg" width="250" alt="Screen 1"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-23.jpg" width="250" alt="Screen 2"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-29.jpg" width="250" alt="Screen 3"/></td> 
-  </tr>
-  <tr>
-    <td><img src="photos/photo_2026-03-26_01-57-30.jpg" width="250" alt="Screen 4"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-31.jpg" width="250" alt="Screen 5"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-33.jpg" width="250" alt="Screen 6"/></td>
-  </tr>
-  <tr>
-    <td><img src="photos/photo_2026-03-26_01-57-34.jpg" width="250" alt="Screen 7"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-35.jpg" width="250" alt="Screen 8"/></td>
-    <td><img src="photos/photo_2026-03-26_01-57-36.jpg" width="250" alt="Screen 9"/></td>
-  </tr>
-  <tr>
-    <td><img src="photos/photo_2026-03-26_01-57-37.jpg" width="250" alt="Screen 10"/></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
 ---
 
 ## 📖 Overview
@@ -59,13 +37,28 @@ This project was built with scalability and maintainability in mind, strictly ad
 
 ## 📸 Screenshots
 
-*(Replace the placeholder links below with your actual screenshot links)*
-
-| Home & Categories | Lens Grid & Search | Details & Gallery |
-| :---: | :---: | :---: |
-| <img src="LINK_1" width="220"/> | <img src="LINK_2" width="220"/> | <img src="LINK_3" width="220"/> |
-| **Dark Mode Support** | **Quick Edit Dialog** | **Generated PDF Output** |
-| <img src="LINK_4" width="220"/> | <img src="LINK_5" width="220"/> | <img src="LINK_6" width="220"/> |
+<table style="width:100%">
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-22.jpg" width="250" alt="Screen 1"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-23.jpg" width="250" alt="Screen 2"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-29.jpg" width="250" alt="Screen 3"/></td> 
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-30.jpg" width="250" alt="Screen 4"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-31.jpg" width="250" alt="Screen 5"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-33.jpg" width="250" alt="Screen 6"/></td>
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-34.jpg" width="250" alt="Screen 7"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-35.jpg" width="250" alt="Screen 8"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-36.jpg" width="250" alt="Screen 9"/></td>
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-37.jpg" width="250" alt="Screen 10"/></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 ---
 
