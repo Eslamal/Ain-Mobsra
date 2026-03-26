@@ -4,13 +4,28 @@
   <strong>A robust, enterprise-grade Android application tailored for optical centers to manage inventory, host product galleries, and generate dynamic PDF catalogs.</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-100%25-blue?logo=kotlin" alt="Kotlin">
-  <img src="https://img.shields.io/badge/UI-Jetpack%20Compose-success?logo=android" alt="Jetpack Compose">
-  <img src="https://img.shields.io/badge/Architecture-Clean%20Architecture%20%2B%20MVVM-orange" alt="Architecture">
-  <img src="https://img.shields.io/badge/Backend-Firebase-yellow?logo=firebase" alt="Firebase">
-</p>
-
+<table style="width:100%">
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-22.jpg" width="250" alt="Screen 1"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-23.jpg" width="250" alt="Screen 2"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-29.jpg" width="250" alt="Screen 3"/></td> 
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-30.jpg" width="250" alt="Screen 4"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-31.jpg" width="250" alt="Screen 5"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-33.jpg" width="250" alt="Screen 6"/></td>
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-34.jpg" width="250" alt="Screen 7"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-35.jpg" width="250" alt="Screen 8"/></td>
+    <td><img src="photos/photo_2026-03-26_01-57-36.jpg" width="250" alt="Screen 9"/></td>
+  </tr>
+  <tr>
+    <td><img src="photos/photo_2026-03-26_01-57-37.jpg" width="250" alt="Screen 10"/></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 ---
 
 ## 📖 Overview
@@ -70,6 +85,5 @@ To run this project locally, you need to configure your own Firebase environment
 ## 👨‍💻 Developer
 
 Developed by **Eslam Ali**
-* 💼 **LinkedIn:** [Insert Your LinkedIn Link]
-* 📧 **Email:** [Insert Your Email]
+* 📧 **Email:** [eslameng776@gmail.com]
 * 🛠️ **Role:** Android Software Engineer
