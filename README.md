@@ -8,7 +8,7 @@
 
 ## 📖 Overview
 
-**Ibsar** translates complex inventory data into a seamless mobile experience. Designed specifically for optical centers, the app allows administrators to categorize lenses, input detailed specifications, upload multiple high-resolution images, and export fully styled PDF catalogs directly from the device.
+**Ain Mobsrah** translates complex inventory data into a seamless mobile experience. Designed specifically for optical centers, the app allows administrators to categorize lenses, input detailed specifications, upload multiple high-resolution images, and export fully styled PDF catalogs directly from the device.
 
 ## ✨ Key Features
 
