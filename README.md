@@ -44,11 +44,6 @@ A production-grade, Enterprise-Level Android application engineered for a leadin
     <td align="center"><img src="screens/20.jpg" width="240" alt="Screen 20"/><br/><sub>Bluetooth Discovery</sub></td>
     <td align="center"><img src="screens/21.jpg" width="240" alt="Screen 21"/><br/><sub>Activation Screen</sub></td>
   </tr>
-  <tr>
-    <td align="center"><img src="screens/22.jpg" width="240" alt="Screen 22"/><br/><sub>System Suspended</sub></td>
-    <td></td>
-    <td></td>
-  </tr>
 </table>
 
 </div>
