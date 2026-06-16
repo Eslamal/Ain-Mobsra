@@ -1,7 +1,6 @@
 # 📱 Ibsar - Enterprise Optometry & Clinic Management System
 
-A production-grade, Enterprise-Level Android application engineered for a leading chain of optometry clinics and medical eye-care centers in Saudi Arabia (KSA). The system digitizes the entire clinical workflow—ranging from advanced optical vision measurements and lens inventory cataloging to global live license management, offline-first synchronization, and hardware-level typography rendering for thermal prescription printing.
-
+A production-grade, Enterprise-Level Android application engineered for optometry clinics and medical eye-care centers. The system digitizes the entire clinical workflow—ranging from advanced optical vision measurements and inventory cataloging to ZATCA-compliant E-Invoicing, offline-first synchronization, and hardware-level typography rendering for thermal POS printing.
 ---
 
 ## 📸 Screenshots & UI 
@@ -52,11 +51,17 @@ A production-grade, Enterprise-Level Android application engineered for a leadin
 
 ## 🎯 Core Problems Solved for Modern Clinical Environments
 
-1. **Slow Prescription Writing:** Optometrists and ophthalmologists spent significant time rewriting repetitive drug dosages and diagnostic notes. The built-in **Smart Templates Manager** accelerates this process, allowing full prescription entries with a single tap.
-2. **Scattered Patient Medical Records:** Tracking whether a patient's visual metrics ($SPH$ / $CYL$ / $AXIS$) deteriorated or stabilized across months used to require searching through manual paperwork. The app introduces a localized **Medical History Timeline** comparing current and historical metrics instantly.
-3. **Hardware & Arabic Typography Incompatibility:** Standard Bluetooth POS thermal printers natively distort right-to-left Arabic font connections, causing unreadable characters. Our customized programmatic bitmap graphics channel overrides hardware deficits to print flawless, unified Arabic receipts.
-4. **Network Dropouts in Clinical Exam Chambers:** Heavily shielded concrete medical environments often drop Wi-Fi signals. The architecture implements a strict **Offline-First Hardware Cache System** ensuring 100% application operational uptime.
+1. Smart Optometry Formulations: Optometrists previously spent significant time rewriting repetitive drug dosages and diagnostic notes. The built-in Smart Templates Manager accelerates this process, allowing full prescription entries with a single tap.
 
+2. Medical History Timeline: Tracking visual metric deterioration (SPH / CYL / AXIS) across months used to require manual paperwork. The app introduces a localized timeline comparing current and historical metrics instantly.
+
+3. ZATCA-Compliant POS & E-Invoicing: Fully integrated Point of Sale (POS) system generating real-time tax invoices with cryptographic TLV Base64 QR Codes, ensuring 100% Phase-1 compliance with the Saudi Zakat, Tax and Customs Authority (ZATCA).
+
+4. Offline-First Resilience: Heavily shielded concrete medical environments often drop Wi-Fi signals. The architecture implements a strict Offline-First Hardware Cache System combined with atomic transaction operations, ensuring uninterrupted clinical and sales workflows.
+
+5. Hardware-Level Arabic Thermal Printing: Standard Bluetooth POS thermal printers natively distort right-to-left Arabic fonts. A custom-built programmatic bitmap graphics pipeline was engineered to override hardware deficits, printing flawless, fully connected Arabic receipts.
+
+6. Invoices Archive System: Centralized and searchable digital archive allowing instant retrieval, visual PDF exporting, and re-printing of historical sales invoices.
 ---
 
 ## 🛠️ Tech Stack & Architecture
@@ -70,47 +75,6 @@ A production-grade, Enterprise-Level Android application engineered for a leadin
   * Firebase Authentication & Cloud Storage.
   * Firebase Crashlytics (For remote tracking, real-time diagnostic telemetry, and proactive error logging).
 * **External Engines:** Google ZXing Engine (Dynamic QR Code vector generation), Native Android `PdfDocument` engine, and low-level Bluetooth ESC/POS hardware terminal drivers.
-
----
-
-## 🚨 Technical Challenges Faced & Architectural Solutions
-
-### 1. Memory Leaks and 'Unresolved Reference: awaitClose' in Firestore Handlers
-* **The Challenge:** Attempting to stream real-time client records into presentation UI models using standard asynchronous asynchronous callbacks introduced severe memory leaks because observers remained active after view destruction. Wrapping the listener loops within a `callbackFlow` block initially caused compilation failures due to missing runtime cancellation channel extensions.
-* **The Resolution:** Imported `kotlinx.coroutines.channels.awaitClose` and built a clean reactive pipeline wrapper. The Firestore `addSnapshotListener` is now strictly unregistered inside the `awaitClose` closure block, safeguarding the resource channel from leaking memory during aggressive recompositions.
-
-### 2. Disconnecting Real-Time Licensing (Global Live Kill-Switch Flow)
-* **The Challenge:** Initially, checking the remote SaaS subscription token was bound exclusively to the local view lifecycle of the `ActivationScreen`. Once validation passed and the user shifted onto the dashboard, the associated `ViewModel` cleared out, terminating the snapshot listener. If a client's license was revoked or suspended mid-session, they could continue accessing patient data indefinitely until a manual application reload occurred.
-* **The Resolution:** Shifted the state logic upward by registering the `LicenseViewModel` directly within the root `IbsarNavGraph` scope. By coupling an active, app-wide background `LaunchedEffect` listener with an aggressive navigational `popUpTo(0)` transactional wipeout, the application now enforces remote license blocks globally within milliseconds across any operational sub-view.
-
-### 3. Multi-Input Rendering Lag & State Overhead in Optometry Forms
-* **The Challenge:** Capturing vision testing results requires handling over 20 concurrent text inputs simultaneously (Sphere, Cylinder, Axis fields for both distance and near vision across left and right eyes). Using separate individual state trackers triggered severe interface stuttering during typing due to uncoordinated UI recompositions, while selecting inputs manually degraded physician efficiency.
-* **The Resolution:** Refactored individual parameters into a unified, immutable data configuration named `ExaminationUiState`. Input components were optimized using a centralized focus management routine that routes `ImeAction.Next` behaviors into automatic `FocusManager` shifts, cutting data-entry time by nearly 70%.
-
-### 4. Arabic Text Distortion & Bitmap Rasterization on 58mm Devices
-* **The Challenge:** Budget-friendly 58mm mobile thermal printers lack structural character libraries for right-to-left connected Arabic writing layouts, printing broken, unjoined, and reversed glyph structures.
-* **The Resolution:** Engineered a programmatic graphics translation pipeline. The system passes data strings onto an Android `StaticLayout` bounded by strict width properties, renders corporate logos, generates patient verification metadata QR Codes through Google ZXing, draws everything onto a clean white-background graphical `Canvas` bitmap, and translates pixel opacity matrices straight into raw binary ESC/POS command arrays (`GS v 0`).
-
----
-
-## ⚙️ Setup Instructions
-
-To execute this architecture locally, verify the following platform requirements:
-
-1. **Firebase Configuration:** 
-   * Obtain a fresh `google-services.json` layout file from the Firebase Console.
-   * Store it directly inside the local `app/` folder. *(Note: Enforced as git-ignored for repository protection)*.
-2. **SHA-1 Fingerprint Mapping:**
-   * Append your machine development environment `SHA-1` and `SHA-256` keys to the cloud console project settings to unlock secure Google Sign-In routines.
-3. **Database Security Architecture:**
-   * Configure Firestore and Storage permission rules to restrict file access pipelines exclusively to securely authenticated operational users.
-
----
-
-## 📌 Future Enhancements (V2.0 Product Roadmap)
-- [ ] **Bulk Inventory Sync:** Build CSV/Excel automation handlers to batch-upload legacy optical product stock.
-- [ ] **Hardware Barcode Decoder:** Integrate high-performance camera scanning routines for lightning-fast lens stock verification.
-- [ ] **Stock Alert Triggers:** Deploy automatic notifications and background indicators for low-level diagnostic lens batches.
 
 ---
 
